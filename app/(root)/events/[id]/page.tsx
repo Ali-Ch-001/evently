@@ -14,6 +14,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
     page: searchParams.page as string,
   })
 
+
   return (
     <>
     <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain">
@@ -53,14 +54,18 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
             <div className='flex gap-2 md:gap-3'>
               <Image src="/assets/icons/calendar.svg" alt="calendar" width={32} height={32} />
               <div className="p-medium-16 lg:p-regular-20 flex flex-wrap items-center">
-                <p>
-                  {formatDateTime(event.startDateTime).dateOnly} - {' '}
-                  {formatDateTime(event.startDateTime).timeOnly}
-                </p>
-                <p>
-                  {formatDateTime(event.endDateTime).dateOnly} -  {' '}
-                  {formatDateTime(event.endDateTime).timeOnly}
-                </p>
+
+                <div className="flex flex-col">
+                    <p>
+                      {formatDateTime(event.startDateTime).dateOnly} - {' '}
+                      {formatDateTime(event.startDateTime).timeOnly}
+
+                    </p>
+                    <p>
+                      {formatDateTime(event.endDateTime).dateOnly} -  {' '}
+                      {formatDateTime(event.endDateTime).timeOnly}
+                    </p>
+                </div>
               </div>
             </div>
 
